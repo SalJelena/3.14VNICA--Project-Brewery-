@@ -26,6 +26,7 @@ Website is still not complete. Some functionalities will be added in near future
 3. Add styles to front page.
 4. Add logout button.
 5. Make server available online without running it previously.
+6. Making the website responsive.
 
 # Used technologies
 
