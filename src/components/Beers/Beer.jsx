@@ -1,25 +1,42 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router"
+import { getBeerById } from "../../Service"
 import StyledBeer from "./StyledBeer"
 
-const Beer = ({beer}) => {
+const Beer = () => {
 
-    const [isActive, setIsActive] = useState('')
+    const [beer, setBeer] = useState(null)
     
+    let {id} = useParams()
 
-    // beer.available ? setIsActive('Available') : setIsActive('Not available currently.')
+    useEffect(()=>{
 
-    //Klik na svaku karticu ce voditi na detaljnije o tom pivu, na promps
+        let mounted = true
+        getBeerById(id).then(res => {
+            if(mounted)
+            setBeer(res.data)
+            console.log(res.data);
+        })
+        return () => {mounted = false}
 
-    return(
-        <StyledBeer onClick={()=>{
+    }, [id]) 
 
-        }} >
-            <p>{beer.name}</p>
+  
+
+    return  (
+        <StyledBeer>
+            <p>{beer?.name}</p>
             
-            <img src={process.env.PUBLIC_URL + beer.image} alt={beer.name} />
-          
+            <img src={beer?.image} alt={beer?.name} /> 
+            <p>{beer?.description}</p>
+
+            <div>
+                <p>{beer?.food_pairing.map(p => <li key={beer.id}>{p}</li>)}</p>
+            </div>
+
+            <p>{beer?.brewers_tips}</p>
         </StyledBeer>
     )
-}
+    }
 
 export default Beer

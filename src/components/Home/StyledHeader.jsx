@@ -1,5 +1,18 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
+const type = keyframes` typing {
+    from {
+      width: 0
+    }
+  }
+  `
+      
+const blink = keyframes` blink {
+    50% {
+      border-color: transparent
+    }
+  }
+  `
 
 const StyledHeader = styled.header`
     padding: 0;
@@ -18,7 +31,8 @@ const StyledHeader = styled.header`
         margin: 0;
         width: 100%;   
     }
-    .header-title {
+    
+     .header-title {
         font-family: 'Anton', sans-serif;
         margin-top: 0;
         /* flex: 1; */
@@ -33,9 +47,16 @@ const StyledHeader = styled.header`
         justify-content: center;
         align-items: start;
         justify-items: start; */
-        color:#FFD700; 
-    } 
+       
+        color: #ffffff;   
+       
+        animation: ${type} 2s steps(22), ${blink} .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        
+        
 
+    }
 `
 
 export default StyledHeader

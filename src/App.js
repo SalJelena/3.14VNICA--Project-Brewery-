@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalFonts from './Fonts/fonts';
 import GlobalStyles from './GlobalStyles';
 import Home from './components/Home/Home';
@@ -13,13 +13,15 @@ import StyledNav from './components/Home/StyledNav';
 import StyledLink from './components/Home/StyledLink';
 import StyledLinkBtn from './components/Home/StyledLinkBtn';
 import StyledImg from './components/Home/StyledImg';
+import BeerInfo from './components/Beers/BeerInfo';
+import Beer from './components/Beers/Beer';
 
 const App = () => {
 
-
+  const [beers, setBeers] = useState([])
   const [user, setUser] = useState(null)
   const [users, setUsers] = useState([])
-
+ 
 
 
   return (
@@ -57,9 +59,13 @@ const App = () => {
         <About />
       </Route>
 
-      <Route path="/beers">
-        <Beers />
+      <Route exact path="/beers">
+        <Beers beers={beers} setBeers={setBeers} />
       </Route>
+
+      <Route exact path="/beers/:id">
+					<Beer beers={beers} />
+			</Route>
 
       <Route path="/gotidea">
         <GotIdea user={user} />

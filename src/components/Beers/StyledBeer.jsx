@@ -9,16 +9,15 @@ const StyledBeer = styled.div`
     margin: 25px;
     &:hover{
 
-
     }
     
     img{
         width: 250px;
     }
-    &:hover{
+    /* &:hover{
         transform: scale(1.2);
         cursor: pointer;
-    }
+    } */
 
 
     

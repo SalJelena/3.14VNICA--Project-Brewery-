@@ -8,6 +8,7 @@ const StyledLinkRight = styled(Link)`
     margin-left: 4rem;
     transition: .2s transform ease-in-out
     will-change transform;
+    
     &:link,
     &:visited {
         font-size: 1.2rem;

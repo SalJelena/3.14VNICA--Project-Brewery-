@@ -13,7 +13,11 @@ const StyledBeers = styled.div`
     ". . ."
     ". . ."
     ". . .";
-    text-align: center;
+  text-align: center;
+  /* &:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+  } */
 
 
 
