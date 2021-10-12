@@ -1,25 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import GlobalFonts from './Fonts/fonts';
+import GlobalStyles from './GlobalStyles';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Beers from './components/Beers/Beers';
+import Login from './components/Forms/Login';
+import Register from './components/Forms/Register';
+import GotIdea from './components/Forms/GotIdea';
+import StyledNav from './components/Home/StyledNav';
+import StyledLink from './components/Home/StyledLink';
+import StyledLinkBtn from './components/Home/StyledLinkBtn';
+import StyledImg from './components/Home/StyledImg';
+
+const App = () => {
+
+
+  const [user, setUser] = useState(null)
+  const [users, setUsers] = useState([])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <Router>
+      <GlobalFonts />
+      <GlobalStyles />
+     
+      <StyledNav>
+        <StyledImg src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634024959/final_project/3.14vnica_zehias.png" alt="logo"  />
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/about">About us</StyledLink>
+        <StyledLink to="/beers">Beers</StyledLink>
+        <StyledLink to="/gotidea">Got idea?</StyledLink>
+
+        { user ? 
+        <p>{user.username}</p>
+        :
+        <>
+        <StyledLinkBtn to="/login">Login</StyledLinkBtn>
+        <StyledLinkBtn to="/register">Register</StyledLinkBtn>
+        </>
+        }
+       
+      </StyledNav>
+
+
+    <Switch>
+
+      <Route exact path="/">
+        <Home />
+      </Route>
+
+      <Route path="/about">
+        <About />
+      </Route>
+
+      <Route path="/beers">
+        <Beers />
+      </Route>
+
+      <Route path="/gotidea">
+        <GotIdea user={user} />
+      </Route>
+
+      <Route path="/login">
+        <Login setUser={setUser} setUsers={setUser} />
+      </Route>
+
+      <Route path="/register">
+        <Register setUsers={setUsers} />
+      </Route>
+
+
+    </Switch>
+
+
+
+    </Router>
+
+
   );
 }
+
 
 export default App;
