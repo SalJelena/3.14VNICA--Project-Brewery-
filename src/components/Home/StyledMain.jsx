@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledMain = styled.main`
     padding: 0;
   
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     margin:0;
@@ -22,7 +22,7 @@ const StyledMain = styled.main`
         align-items: start;
         justify-items: start;
         color:#FFD700; 
-    }
+    } */
 `
 
 export default StyledMain

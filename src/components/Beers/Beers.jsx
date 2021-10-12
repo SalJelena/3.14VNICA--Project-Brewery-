@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { getAllBeers } from "../../Service"
 import Beer from "./Beer"
 import Select from "./Select"
+import StyledBeers from "./StyledBeers"
+
 
 const Beers = () => {
 
@@ -20,10 +22,17 @@ const Beers = () => {
     let flavourType = [...new Set(beers.map(beer => beer.flavour))]
 
     return(
-        <div>
+        <>
+      
+         
+            <div classname="div-select">
             <Select setSelect={setSelect} options={flavourType} type='types of flavours' />
+            </div>
+            <StyledBeers>
             {beers.filter(beer => beer.flavour.startsWith(select)).map(beer => <Beer key={beer.id} beer={beer} />)}
-        </div>
+
+        </StyledBeers>
+        </>
     )
 }
 

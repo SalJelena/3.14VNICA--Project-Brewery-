@@ -3,11 +3,12 @@ import styled from 'styled-components'
 const StyledFooter = styled.footer`
     padding: 1rem 3rem;
 
-    background-color: #37383d;
+    background-color: black;
     .footer-nav {
         list-style: none;
         display: flex;
         justify-content: center;
+        color: white;
         /* margin-bottom: 1rem; */
     }
     /* .footer-item {

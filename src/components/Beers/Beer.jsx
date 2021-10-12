@@ -1,4 +1,5 @@
 import { useState } from "react"
+import StyledBeer from "./StyledBeer"
 
 const Beer = ({beer}) => {
 
@@ -10,14 +11,14 @@ const Beer = ({beer}) => {
     //Klik na svaku karticu ce voditi na detaljnije o tom pivu, na promps
 
     return(
-        <div onClick={()=>{
+        <StyledBeer onClick={()=>{
 
         }} >
             <p>{beer.name}</p>
-            <p>{beer.flavour}</p>
-            <img src={process.env.PUBLIC_URL + beer.image} alt={beer.name} width="150px" />
-            <hr />
-        </div>
+            
+            <img src={process.env.PUBLIC_URL + beer.image} alt={beer.name} />
+          
+        </StyledBeer>
     )
 }
 
