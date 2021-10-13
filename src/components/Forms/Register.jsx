@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useHistory } from "react-router"
 import { getAllUsers, postUser } from "../../Service"
 import { v1 as uuidv1 } from 'uuid'
+import StyledRegister from "./StyledRegister"
 
 const Register = ({setUsers}) => {
 
@@ -24,7 +25,9 @@ const Register = ({setUsers}) => {
     }
 
     return(
-        <div>
+        <>
+         <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1633982169/final_project/main3_mwmm52.png" alt="img" width="100%" />
+        <StyledRegister>
             <h2>Please enter data to register</h2>
                 <form onSubmit={(e)=>{
                     e.preventDefault()
@@ -64,7 +67,8 @@ const Register = ({setUsers}) => {
                     }} />
                     <input type="submit" value="Register" />
                 </form>
-        </div>
+        </StyledRegister>
+        </>
     )
 }
 

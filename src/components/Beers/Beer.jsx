@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { useHistory, useParams } from "react-router"
 import { getBeerById } from "../../Service"
 import StyledBeer from "./StyledBeer"
 
@@ -8,6 +8,8 @@ const Beer = () => {
     const [beer, setBeer] = useState(null)
     
     let {id} = useParams()
+
+    const history = useHistory()
 
     useEffect(()=>{
 
@@ -27,8 +29,10 @@ const Beer = () => {
         <StyledBeer>
 
             <div className="beer__information" >
-                
-                    <h1>{beer?.name}</h1>
+            <p className="backbtn" onClick={()=>{
+                history.push('/beers')
+            }}>Go back</p>  
+            <h1>{beer?.name}</h1>
                
             <p>{beer?.description}</p>
             <div>

@@ -16,6 +16,9 @@ const StyledBeer = styled.div`
         ". ."; 
     align-content: space-around; 
     justify-items: center;
+    .backbtn{
+        cursor: pointer;
+    }
     .beer__information{
         padding: 25px;
         background-color: #f7f7f7;
