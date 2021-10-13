@@ -7,8 +7,12 @@ const StyledRegister = styled.div`
   transform: translate(-50%,-50%);
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 500px;
   text-align: center;
+
+  h2{
+      color: white;
+  }
 
 form {
   margin: 20px;
@@ -25,6 +29,7 @@ form {
   display:flex;
   justify-content: space-around;
   flex-direction: column;
+  height: 400px;
 }
 
 input{
@@ -37,6 +42,9 @@ input[type=submit]{
     background-color: black;
     color: white;
     cursor: pointer;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 a {

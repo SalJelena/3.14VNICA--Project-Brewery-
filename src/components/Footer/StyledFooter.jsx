@@ -2,34 +2,36 @@ import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
     padding: 1rem 3rem;
-
+    display: block;
     background-color: black;
+    text-align: center;
+      
     .footer-nav {
-        list-style: none;
-        display: flex;
-        justify-content: center;
+        list-style: none;    
         color: white;
-        /* margin-bottom: 1rem; */
+        display: block;
     }
-    /* .footer-item {
-        margin-right: 4rem;
-    }
-    .footer-svg {
-        width: 1.6rem;
-    }
-    .footer-copyright {
-        font-size: 1rem;
-        color: #aaa;
-        text-align: center;
-    }
-    .footer-link {
-        font-size: 1.1rem;
-        color: #eee;
+
+    li {
+        display: inline-block;
+        list-style-type: none;
         text-decoration: none;
     }
-    .footer-copyright .footer-link {
-        font-size: 1.1rem;
-    } */
+
+    img {
+        width: 30px;
+        padding: 5px;
+    }
+
+    .footer-copyright{
+        color: white;
+        display: block;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
 `
 
 export default StyledFooter

@@ -10,6 +10,10 @@ const StyledLogin = styled.div`
   width: 500px;
   text-align: center;
 
+  h2{
+    color: white;
+  }
+
 form {
   margin: 20px;
   background: rgba(255,255,255,0.3);

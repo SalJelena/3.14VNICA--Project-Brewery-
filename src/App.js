@@ -15,6 +15,7 @@ import StyledLinkBtn from './components/Home/StyledLinkBtn';
 import StyledImg from './components/Home/StyledImg';
 import BeerInfo from './components/Beers/BeerInfo';
 import Beer from './components/Beers/Beer';
+import StyledFooter from './components/Footer/StyledFooter';
 
 const App = () => {
 
@@ -47,7 +48,7 @@ const App = () => {
         }
        
       </StyledNav>
-
+     
 
     <Switch>
 
