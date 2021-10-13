@@ -3,16 +3,16 @@ const Footer = () => {
         <footer className="footer">
             <ul className="footer-nav">
                 <li className="footer-item">
-                    <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634049097/final_project/back4_nntrjf.png" alt="facebook" className="footer-svg"/>
+                    <i class="fa-brands fa-twitter"></i>
                 </li>
                 <li className="footer-item">
-                    <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634049097/final_project/back4_nntrjf.png" alt="instagram" className="footer-svg"/>
+                    <i class="fa-brands fa-facebook"></i>
                 </li>
                 <li className="footer-item">
-                    <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634049097/final_project/back4_nntrjf.png" alt="youtube" className="footer-svg"/>
+                    <i class="fa-brands fa-instagram"></i>
                 </li>
                 <li className="footer-item">
-                    <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634049097/final_project/back4_nntrjf.png" alt="twitter" className="footer-svg"/>
+                    <i class="fa-brands fa-instagram"></i>
                 </li>
             </ul>
             <p className="footer-copyright">&copy; Copyright by&nbsp;<a className="footer-link" href="https://github.com/SalJelena">Jelena Salopek</a></p>

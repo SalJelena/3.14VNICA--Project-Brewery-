@@ -1,7 +1,7 @@
 const Option = ({ opt }) => {
     return (
         <>
-            <option value={opt}>{opt}</option>
+            <option  value={opt}>{opt}</option>
         </>
     )
 }

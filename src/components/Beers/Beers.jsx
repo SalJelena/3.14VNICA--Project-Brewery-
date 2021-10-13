@@ -4,12 +4,15 @@ import { getAllBeers } from "../../Service"
 
 import Select from "./Select"
 import StyledBeers from "./StyledBeers"
+import StyledBtn from "./StyledBtn"
+import StyledInputs from "./StyledInputs"
 
 
 const Beers = ({beers, setBeers}) => {
 
 
     const [select, setSelect] = useState('')
+    const [input, setInput] = useState('')
  
     
     useEffect(() => {
@@ -30,21 +33,32 @@ const Beers = ({beers, setBeers}) => {
 
     return(
         <>
+        <StyledInputs>
             <div className="div-select">
-            <Select setSelect={setSelect} options={flavourType} type='types of flavours' />
+                <Select setSelect={setSelect} options={flavourType} type='types of flavours' />
             </div>
-
-            <StyledBeers>
+            <div className="div-input" >
+                <input type="text" placeholder="Search by name..." onChange={(e)=>{
+                    setInput(e.target.value)
+                    
+                }} />
+            </div>
+        </StyledInputs>
+        <StyledBeers>
             {beers.filter(beer => beer.flavour.startsWith(select)).map(beer => 
             
             <div key={beer.id}> 
-            <Link to={`/beers/${beer.id}`}>{beer.name} <br/><img src={beer.image} alt={beer.name} width="250px"/> </Link> 
+            <StyledBtn to={`/beers/${beer.id}`}>
+                <h3>{beer.name}</h3>
+                <br/>
+                <img src={beer.image} alt={beer.name} width="350px"/> 
+            </StyledBtn> 
             
             </div>
 
             )}
 
-        </StyledBeers>
+    </StyledBeers>
         </>
     )
 }

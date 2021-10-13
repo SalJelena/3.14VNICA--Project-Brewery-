@@ -25,16 +25,24 @@ const Beer = () => {
 
     return  (
         <StyledBeer>
-            <p>{beer?.name}</p>
-            
-            <img src={beer?.image} alt={beer?.name} /> 
-            <p>{beer?.description}</p>
 
+            <div className="beer__information" >
+                
+                    <h1>{beer?.name}</h1>
+               
+            <p>{beer?.description}</p>
             <div>
-                <p>{beer?.food_pairing.map(p => <li key={beer.id}>{p}</li>)}</p>
+                <h2>Ideas for food pairings:</h2>
+                <ul>{beer?.food_pairing.map(p => <li key={beer.id}>{p}</li>)}</ul>
+            </div>
+            <h2>Brewer's tips for you:</h2>
+            <p>{beer?.brewers_tips}</p>
             </div>
 
-            <p>{beer?.brewers_tips}</p>
+            <div className="beer__image" >
+            <img src={beer?.image} alt={beer?.name} /> 
+            </div>
+
         </StyledBeer>
     )
     }

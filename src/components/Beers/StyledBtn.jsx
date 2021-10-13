@@ -1,17 +1,14 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const StyledBtn = styled.a`
-    display: inline-block;
+const StyledBtn = styled(Link)`
     background: none;
     font-size: 1.7rem;
-    font-family: inherit;
+    font-family: 'Anton', sans-serif;
     font-weight: 500;
-    color: #5ec576;
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 2px;
-    cursor: pointer;
-    transition: all 1s;
+    color: #2a2438;
     text-decoration: none;
+
 `
 
 export default StyledBtn
