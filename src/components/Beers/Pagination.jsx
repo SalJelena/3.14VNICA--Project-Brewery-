@@ -31,13 +31,26 @@ const Pagination = ({beers, displayed, setOnPage}) => {
 
 
     return (
-        <StyledButtonsSection>
+        <>
+        {
+            displayed <= 6 ?
+
+            <StyledButtonsSection>
             <StyledButtons disabled={currPage <= 1} onClick={()=>{
             changePage(currPage -1)
             }}>BACK</StyledButtons>
             {pages.map(page => <StyledButtons key={page} onClick={()=>{changePage(page)}} >{page}</StyledButtons>)}
             <StyledButtons disabled={currPage >= pages.length} onClick={()=>{changePage(currPage + 1)}} >NEXT</StyledButtons>
-        </StyledButtonsSection>
+            </StyledButtonsSection>
+
+            :
+
+            <div></div>
+
+        }
+
+
+        </>
     )
 }
 

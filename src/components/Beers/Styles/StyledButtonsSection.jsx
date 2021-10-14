@@ -8,6 +8,13 @@ const StyledButtonsSection = styled.div`
     justify-content: center;
     align-content: center;
 
+    span{
+        
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px;
+    }
+
 `
 
 export default StyledButtonsSection
