@@ -3,6 +3,7 @@ import { useHistory } from "react-router"
 import { getAllUsers, postUser } from "../../../Service"
 import { v1 as uuidv1 } from 'uuid'
 import StyledRegister from "./StyledRegister"
+import StyledMainField from "../Login/StyledMainField"
 
 const Register = ({setUsers}) => {
 
@@ -13,12 +14,21 @@ const Register = ({setUsers}) => {
 
     const history = useHistory()
 
+    const doesItHaveNumber = (str) => {
+        return (/\d/.test(str))
+    }
+
+    const hasLowerCase = (str) => {
+        return (/[A-Z]/.test(str))
+    }
+
     const isValidNewUser = (array) => {
         if(!array.find(user => user.username === username || user.email === email)
         && email.includes('@' && '.')
         && username.length >= 4
         && password.length > 8  
-   
+        && doesItHaveNumber(password)
+        && hasLowerCase(password)
         ){
             return true
         }
@@ -26,7 +36,7 @@ const Register = ({setUsers}) => {
 
     return(
         <>
-         <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1633982169/final_project/main3_mwmm52.png" alt="img" width="100%" />
+        <StyledMainField>
         <StyledRegister>
             <h2>Please enter data to register</h2>
                 <form onSubmit={(e)=>{
@@ -68,6 +78,7 @@ const Register = ({setUsers}) => {
                     <input type="submit" value="Register" />
                 </form>
         </StyledRegister>
+        </StyledMainField>
         </>
     )
 }

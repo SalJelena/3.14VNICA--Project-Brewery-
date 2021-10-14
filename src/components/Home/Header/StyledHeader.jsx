@@ -1,4 +1,15 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const slidetop = keyframes`
+0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+`
 
 
 const StyledHeader = styled.header`
@@ -23,8 +34,8 @@ const StyledHeader = styled.header`
         padding-right: 700px;
         padding-left: 50px;    
         color: #ffffff;        
-        
         overflow: hidden;
+        animation: ${slidetop} 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
     }
 `

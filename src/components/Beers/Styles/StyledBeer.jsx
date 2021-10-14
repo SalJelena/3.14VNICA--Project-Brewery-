@@ -16,6 +16,7 @@ const StyledBeer = styled.div`
         ". ."; 
     align-content: space-around; 
     justify-items: center;
+    
     .backbtn{
         cursor: pointer;
     }
@@ -23,6 +24,7 @@ const StyledBeer = styled.div`
         padding: 25px;
         background-color: #f7f7f7;
         box-shadow: 8px 8px 8px 2px rgba(0, 0, 0, 0.2);
+        width: 700px;
     }
     p{
         padding: 25px;
@@ -33,7 +35,8 @@ const StyledBeer = styled.div`
 
     .beer__image {
     padding-top: 50px;
-    background-image: url('https://res.cloudinary.com/dwrla4d2s/image/upload/v1634111167/final_project/back4_5_opyudo.png')
+    background-image: url('https://res.cloudinary.com/dwrla4d2s/image/upload/v1634111167/final_project/back4_5_opyudo.png');
+    background-repeat: no-repeat;
   }
     
 `

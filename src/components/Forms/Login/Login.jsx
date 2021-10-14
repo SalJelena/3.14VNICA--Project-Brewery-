@@ -2,6 +2,8 @@ import { useState } from "react"
 import { getAllUsers } from "../../../Service"
 import { Link, useHistory } from "react-router-dom"
 import StyledLogin from "./StyledLogin"
+import StyledMainField from "./StyledMainField"
+
 
 const Login = ({setUser, setUsers}) => {
 
@@ -15,8 +17,9 @@ const Login = ({setUser, setUsers}) => {
     }
 
     return(
-        <>
-        <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1633982169/final_project/main3_mwmm52.png" alt="img" width="100%" />
+       
+        <StyledMainField>
+        
         <StyledLogin>
             <h2>Enter data to login</h2>
                 <form onSubmit={(e)=>{
@@ -50,7 +53,9 @@ const Login = ({setUser, setUsers}) => {
                         <Link to="/register" >Not registered?</Link>
                     </div>
         </StyledLogin>
-        </>
+
+        </StyledMainField>
+      
     )
 }
 

@@ -2,29 +2,30 @@ import styled from "styled-components";
 
 
 const StyledGotIdea = styled.div`
-    
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  width: 400px;
+  width: 500px;
   text-align: center;
+
+
+h2{
+    font-size: 40px;
+}
 
 form {
   margin: 20px;
-  background: rgba(255,255,255,0.3);
-  padding: 3em;
-  height: 320px;
+  background: white;
+  padding: 20px;
+  height: 400px;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.3);
   backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   text-align: center;
   position: relative;
-  transition: all 0.2s ease-in-out;
+  transition: all 3s ease-in-out;
   display:flex;
   justify-content: space-around;
   flex-direction: column;
+  
 }
 
 input{
@@ -37,6 +38,18 @@ input[type=submit]{
     background-color: black;
     color: white;
     cursor: pointer;
+    width: 200px;
+    margin-left: 110px;
+    
+}
+
+textarea {
+  height: 50px;
+  background-color: #ececec;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  resize: none;
 }
 
 a {

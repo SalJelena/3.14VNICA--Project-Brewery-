@@ -63,7 +63,7 @@ const Beers = ({beers, setBeers}) => {
             <StyledBtn to={`/beers/${beer.id}`}>
                 <h3>{beer.name}</h3>
                 <br/>
-                <img src={beer.image} alt={beer.name} width="350px"/> 
+                <img src={beer.image?beer.image:"https://res.cloudinary.com/dwrla4d2s/image/upload/v1634231280/final_project/Untitled_design__1_-removebg-preview_snxvei.png"} alt={beer.name} width="350px"/> 
             </StyledBtn> 
             
             </div>

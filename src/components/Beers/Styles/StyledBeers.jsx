@@ -1,6 +1,6 @@
+import styled, { keyframes } from "styled-components";
 
 
-import styled from "styled-components";
 
 
 const StyledBeers = styled.div`
@@ -19,9 +19,15 @@ const StyledBeers = styled.div`
       
     }
 
-    img:hover{
+    img:hover
+    {
       transform: scale(1.2);
       
+      
+    }
+
+    h3:hover{
+      color: #393e46;
     }
 
     

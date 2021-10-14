@@ -3,6 +3,7 @@ import { Redirect, useHistory } from "react-router"
 import { v1 as uuidv1 } from 'uuid'
 import { postNewBeer } from "../../../Service"
 import StyledGotIdea from "./StyledGotIdea"
+import StyledMainField from "../Login/StyledMainField"
 
 const GotIdea = ({user, setBeers}) => {
 
@@ -16,18 +17,21 @@ const GotIdea = ({user, setBeers}) => {
 
 
     return user ? (
-        <div>
-            <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1633982169/final_project/main3_mwmm52.png" alt="img" width="100%" />
-         <StyledGotIdea>   
+        <StyledMainField>
+
+         <StyledGotIdea> 
+         <h2>CREATE BEER</h2>  
             <form onSubmit={(e)=>{
                 e.preventDefault()
+
+                let pairings = newFoodPairing.split(',')
 
                 let newBeer = {
                     id: uuidv1(),
                     name: newBeerName,
                     description: newBeerDesc,
                     flavour: newBeerFlavour,
-                    food_pairings: newFoodPairing,
+                    food_pairing: pairings,
                     image: newBeerImage
                 }
 
@@ -38,30 +42,28 @@ const GotIdea = ({user, setBeers}) => {
                 history.push('/beers')
 
             }}>
-            <h2>CREATE BEER</h2>
+            
                 <input type="text" placeholder="Name of beer" onChange={(e)=>{
                     setNewBeerName(e.target.value)
                 }} />
-                <input type="text" placeholder="flavour" onChange={(e)=>{
+                <input type="text" placeholder="Flavour" onChange={(e)=>{
                     setNewBeerFlavour(e.target.value)
                 }} />
                 <input type="text" placeholder="Food pairings" onChange={(e)=>{
                     setNewFoodPairing(e.target.value)
                 }} />
-                <input type="text" placeholder="Image..." onChange={(e)=>{
+                <input type="text" placeholder="Paste link to the image (if possible, if not, leave blank)" onChange={(e)=>{
                     setNewBeerImage(e.target.value)
                 }} />
-                <textarea rows="10" cols="30" placeholder="Write your description here..." onChange={(e) => {
+                <textarea rows="10" cols="30" placeholder="Write your beer recipe here..." onChange={(e) => {
                     setNewBeerDesc(e.target.value)
                 }}/>
-
-
                 <input type="submit" value="new quote" />
             </form>
 
 
                 </StyledGotIdea>
-        </div>
+        </StyledMainField>
     )
     :
     (
