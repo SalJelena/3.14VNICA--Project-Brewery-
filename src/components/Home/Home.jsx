@@ -1,6 +1,6 @@
 import Footer from '../Footer/Footer.jsx'
 import StyledFooter from '../Footer/StyledFooter.jsx'
-import StyledHeader from './StyledHeader.jsx'
+import StyledHeader from './Header/StyledHeader.jsx'
 
 
 

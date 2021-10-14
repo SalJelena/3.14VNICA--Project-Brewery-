@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { getAllUsers } from "../../Service"
+import { getAllUsers } from "../../../Service"
 import { Link, useHistory } from "react-router-dom"
 import StyledLogin from "./StyledLogin"
 

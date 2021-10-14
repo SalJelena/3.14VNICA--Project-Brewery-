@@ -6,16 +6,15 @@ import GlobalStyles from './GlobalStyles';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Beers from './components/Beers/Beers';
-import Login from './components/Forms/Login';
-import Register from './components/Forms/Register';
-import GotIdea from './components/Forms/GotIdea';
-import StyledNav from './components/Home/StyledNav';
-import StyledLink from './components/Home/StyledLink';
-import StyledLinkBtn from './components/Home/StyledLinkBtn';
+import Login from './components/Forms/Login/Login';
+import Register from './components/Forms/Register/Register';
+import GotIdea from './components/Forms/GotIdea/GotIdea';
+import StyledNav from './components/Home/Navbar/StyledNav';
+import StyledLink from './components/Home/Navbar/StyledLink';
+import StyledLinkBtn from './components/Home/Navbar/StyledLinkBtn';
 import StyledImg from './components/Home/StyledImg';
-import BeerInfo from './components/Beers/BeerInfo';
 import Beer from './components/Beers/Beer';
-import StyledFooter from './components/Footer/StyledFooter';
+import StyledIconUser from './components/Home/Navbar/StyledIconUser';
 
 const App = () => {
 
@@ -39,7 +38,9 @@ const App = () => {
         <StyledLink to="/gotidea">Got idea?</StyledLink>
 
         { user ? 
-        <p>{user.username}</p>
+        <StyledIconUser>
+          <p>{user.username}</p>
+        </StyledIconUser>
         :
         <>
         <StyledLinkBtn to="/login">Login</StyledLinkBtn>

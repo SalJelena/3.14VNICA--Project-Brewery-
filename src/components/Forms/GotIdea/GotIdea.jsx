@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Redirect, useHistory } from "react-router"
 import { v1 as uuidv1 } from 'uuid'
-import { postNewBeer } from "../../Service"
+import { postNewBeer } from "../../../Service"
 import StyledGotIdea from "./StyledGotIdea"
 
 const GotIdea = ({user, setBeers}) => {

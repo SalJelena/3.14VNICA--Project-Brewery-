@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useHistory } from "react-router"
-import { getAllUsers, postUser } from "../../Service"
+import { getAllUsers, postUser } from "../../../Service"
 import { v1 as uuidv1 } from 'uuid'
 import StyledRegister from "./StyledRegister"
 

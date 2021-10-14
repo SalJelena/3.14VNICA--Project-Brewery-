@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router"
 import { getBeerById } from "../../Service"
-import StyledBeer from "./StyledBeer"
+import StyledBeer from './Styles/StyledBeer'
 
 const Beer = () => {
 
