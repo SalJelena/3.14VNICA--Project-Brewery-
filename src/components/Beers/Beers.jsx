@@ -8,6 +8,7 @@ import StyledInputs from "./Styles/StyledInputs"
 import SelectShow from './SelectShow'
 import StyledPagination from "./Styles/StyledPagination"
 import StyledCategories from "./Styles/StyledCategories"
+import StyledMain from "./Styles/StyledMain"
 
 
 const Beers = ({beers, setBeers}) => {
@@ -37,6 +38,7 @@ const Beers = ({beers, setBeers}) => {
 
     return(
         <>
+        <StyledMain>
         {/* SELECT FOR FLAVOUR */}
         <StyledCategories>
          <StyledInputs>
@@ -53,6 +55,7 @@ const Beers = ({beers, setBeers}) => {
         </StyledPagination>
         </StyledCategories>
         {/* VIEW OF BEERS SHOWN */}
+       
         <StyledBeers>
             {onPage.filter(b => b.flavour.startsWith(select)).map(beer => 
             
@@ -70,6 +73,7 @@ const Beers = ({beers, setBeers}) => {
 
 
     </StyledBeers>
+    </StyledMain>
         </>
     )
 }
