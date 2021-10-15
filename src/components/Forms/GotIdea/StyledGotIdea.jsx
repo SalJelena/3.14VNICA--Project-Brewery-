@@ -1,5 +1,43 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+const bounce = keyframes`
+0% {
+    transform: translateY(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+`
 
 const StyledGotIdea = styled.div`
   width: 500px;
@@ -8,6 +46,9 @@ const StyledGotIdea = styled.div`
 
 h2{
     font-size: 40px;
+}
+p{
+  animation: ${bounce} 5s infinite both;
 }
 
 form {

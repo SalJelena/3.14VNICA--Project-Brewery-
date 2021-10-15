@@ -15,12 +15,14 @@ const GotIdea = ({user, setBeers}) => {
 
     const history = useHistory()
 
+    console.log(user);
 
     return user ? (
         <StyledMainField>
 
          <StyledGotIdea> 
-         <h2>CREATE BEER</h2>  
+         <h2>Got idea for new beer recipe?</h2>
+         <p>Submit your idea here!</p>  
             <form onSubmit={(e)=>{
                 e.preventDefault()
 

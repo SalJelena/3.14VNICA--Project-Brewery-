@@ -9,9 +9,10 @@ import SelectShow from './SelectShow'
 import StyledPagination from "./Styles/StyledPagination"
 import StyledCategories from "./Styles/StyledCategories"
 import StyledMain from "./Styles/StyledMain"
+import { Redirect } from "react-router"
 
 
-const Beers = ({beers, setBeers}) => {
+const Beers = ({beers, setBeers, user}) => {
    
 
     const [select, setSelect] = useState('')
@@ -36,7 +37,7 @@ const Beers = ({beers, setBeers}) => {
 
     
 
-    return(
+    return (
         <>
         <StyledMain>
         {/* SELECT FOR FLAVOUR */}
@@ -76,6 +77,7 @@ const Beers = ({beers, setBeers}) => {
     </StyledMain>
         </>
     )
+ 
 }
 
 export default Beers

@@ -28,9 +28,12 @@ form {
 }
 
 input{
-    background-color: #ececec;
-    border-radius: 20px;
-    border: none;
+  background-color: white;
+    /* border-radius: 20px; */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
     padding: 10px;
 }
 input[type=submit]{
@@ -39,7 +42,14 @@ input[type=submit]{
     cursor: pointer;
     width: 200px;
     margin-left: 78px;
-    
+    border-radius: 20px;
+}
+input:focus{
+  border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
+  outline: none;
 }
 
 a {

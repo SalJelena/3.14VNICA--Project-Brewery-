@@ -66,7 +66,7 @@ const App = () => {
       </Route>
 
       <Route exact path="/beers/:id">
-					<Beer beers={beers} />
+					<Beer beers={beers} user={user} />
 			</Route>
 
       <Route path="/gotidea">

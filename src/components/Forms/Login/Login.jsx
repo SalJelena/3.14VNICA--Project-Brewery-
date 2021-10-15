@@ -15,6 +15,7 @@ const Login = ({setUser, setUsers}) => {
     const isUserValid = (array) => {
         return (array.find(user => user.password === password && user.username === username))
     }
+    
 
     return(
        
@@ -25,19 +26,21 @@ const Login = ({setUser, setUsers}) => {
                 <form onSubmit={(e)=>{
                     e.preventDefault()
                     
+                    if(username !== '' && password !== ''){
                     getAllUsers().then(res => {
                         setUsers(res.data)
                         // console.log(res.data);
-                        let maybeUser = isUserValid(res.data)
-
+                        let maybeUser = res.data.find(el => (el.username === username || el.email === username) && el.password === password)
+                        
                         if(maybeUser) {
                             setUser(maybeUser)
                             history.push('/gotidea')
                         }else{
                             console.log('Mistake.');
                         }
-
+                        
                     })
+                }
 
                 }} >
                     <input type="text" placeholder="Username..." onChange={(e)=>{
