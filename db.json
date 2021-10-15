@@ -247,6 +247,19 @@
         " rtjrjrt"
       ],
       "image": ""
+    },
+    {
+      "id": "c65b7c10-2da9-11ec-8d86-3bf979750a35",
+      "name": "Beer 2",
+      "description": "ktyktktkrturueurtjyuo68o8oy",
+      "flavour": "Bitter",
+      "food_pairing": [
+        "nesto1",
+        " nesto2",
+        " nesto3",
+        " nesto4"
+      ],
+      "image": ""
     }
   ],
   "users": [

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router"
-import { getBeerById } from "../../Service"
+import { getAllUsers, getBeerById } from "../../Service"
 import StyledBeer from './Styles/StyledBeer'
 
-const Beer = () => {
+const Beer = ({user}) => {
 
     const [beer, setBeer] = useState(null)
     let {id} = useParams()
     const history = useHistory()
-    
+    const [favorite, setFavorite] = useState([])
 
     useEffect(()=>{
 
@@ -28,10 +28,10 @@ const Beer = () => {
         <StyledBeer>
 
             <div className="beer__information" >
-            <p className="backbtn" onClick={()=>{
+            <button onClick={()=>{
                 history.push('/beers')
-            }}>Go back</p> 
-
+            }}>Go back</button> 
+            <span><img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634318053/final_project/heart-removebg-preview_rjdxsl.png" alt="fav" width="20px"></img></span>
 
             <h1>{beer?.name}</h1>
                
@@ -46,12 +46,17 @@ const Beer = () => {
             </div>
 
             <div className="beer__image" >
-               {beer?.image ? 
+             {beer?.image ? 
                 <img src={beer.image} alt={beer?.name} /> 
                 :
                 <img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634231280/final_project/Untitled_design__1_-removebg-preview_snxvei.png" alt={beer?.name} />
 
                }
+
+               <button onClick={()=>{
+                   history.push("/gotidea")
+               }}>Want to send your beer recipe?</button>
+               
             
             </div>
 

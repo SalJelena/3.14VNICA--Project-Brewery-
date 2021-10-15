@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import StyledButtons from "./Styles/StyledButtons";
 import StyledButtonsSection from './Styles/StyledButtonsSection'
+import StyledPages from "./Styles/StyledPages";
 
 
 const Pagination = ({beers, displayed, setOnPage}) => {
@@ -36,11 +37,13 @@ const Pagination = ({beers, displayed, setOnPage}) => {
             displayed <= 6 ?
 
             <StyledButtonsSection>
-            <StyledButtons disabled={currPage <= 1} onClick={()=>{
+            <StyledButtons disabled={currPage <= 1} className="button-back" onClick={()=>{
             changePage(currPage -1)
-            }}>BACK</StyledButtons>
-            {pages.map(page => <StyledButtons key={page} onClick={()=>{changePage(page)}} >{page}</StyledButtons>)}
-            <StyledButtons disabled={currPage >= pages.length} onClick={()=>{changePage(currPage + 1)}} >NEXT</StyledButtons>
+            }}><img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634316245/final_project/left-arrow-removebg-preview_po6ak6.png" alt="arr" width="25px"></img></StyledButtons>
+
+             {pages.map(page => <StyledPages key={page} style={page == currPage?{color:'#efd510'}:{}} onClick={()=>{changePage(page)}}>{page}</StyledPages>)} 
+
+            <StyledButtons disabled={currPage >= pages.length} className="button-next"  onClick={()=>{changePage(currPage + 1)}}><img src="https://res.cloudinary.com/dwrla4d2s/image/upload/v1634314981/final_project/right-arrow-removebg-preview_oritl2.png" alt="arr" width="25px"></img></StyledButtons>
             </StyledButtonsSection>
 
             :

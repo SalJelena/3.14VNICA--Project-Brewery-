@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import GlobalFonts from './Fonts/fonts';
 import GlobalStyles from './GlobalStyles';
 import Home from './components/Home/Home';
@@ -14,15 +15,16 @@ import StyledLink from './components/Home/Navbar/StyledLink';
 import StyledLinkBtn from './components/Home/Navbar/StyledLinkBtn';
 import StyledImg from './components/Home/StyledImg';
 import Beer from './components/Beers/Beer';
-import StyledIconUser from './components/Home/Navbar/StyledIconUser';
+import {StyledIconUser, StyledButtonLogOut } from './components/Home/Navbar/StyledIconUser';
 
 const App = () => {
 
   const [beers, setBeers] = useState([])
   const [user, setUser] = useState(null)
   const [users, setUsers] = useState([])
- 
 
+ 
+  const history = useHistory()
 
   return (
    
@@ -38,9 +40,15 @@ const App = () => {
         <StyledLink to="/gotidea">Got idea?</StyledLink>
 
         { user ? 
+        <>
         <StyledIconUser>
-          <p>{user.username}</p>
+          <p>Hello, <b>{user.username}</b></p>
         </StyledIconUser>
+        <StyledButtonLogOut onClick={()=>{
+          setUser(null)
+          
+        }}>Log out</StyledButtonLogOut>
+        </>
         :
         <>
         <StyledLinkBtn to="/login">Login</StyledLinkBtn>
@@ -62,7 +70,7 @@ const App = () => {
       </Route>
 
       <Route exact path="/beers">
-        <Beers beers={beers} setBeers={setBeers} />
+        <Beers user={user} beers={beers} setBeers={setBeers} />
       </Route>
 
       <Route exact path="/beers/:id">

@@ -9,14 +9,13 @@ import SelectShow from './SelectShow'
 import StyledPagination from "./Styles/StyledPagination"
 import StyledCategories from "./Styles/StyledCategories"
 import StyledMain from "./Styles/StyledMain"
-import { Redirect } from "react-router"
 
 
-const Beers = ({beers, setBeers, user}) => {
-   
+
+const Beers = ({user, beers, setBeers}) => {
 
     const [select, setSelect] = useState('')
-    const [displayed, setDisplayed] = useState('All')
+    const [displayed, setDisplayed] = useState(3)
     const [onPage, setOnPage] = useState([])
 
 
@@ -32,10 +31,9 @@ const Beers = ({beers, setBeers, user}) => {
     },[setBeers])
 
     useEffect(()=>{
-        setOnPage(beers.slice(0, displayed === 'All' ? Infinity : displayed)) 
+        setOnPage(beers.slice(0, displayed)) 
       },[displayed,beers])
 
-    
 
     return (
         <>
@@ -50,7 +48,7 @@ const Beers = ({beers, setBeers, user}) => {
 
         {/* PAGINATION AND VIEW  */}
         <StyledPagination>
-        <SelectShow options={['All', 6]} setDisplayed={setDisplayed} displayed={displayed}/>
+        {/* <SelectShow options={['All', 6]} setDisplayed={setDisplayed} displayed={displayed}/> */}
         
         <Pagination beers={beers} displayed={displayed} setOnPage={setOnPage} />
         </StyledPagination>
@@ -58,6 +56,7 @@ const Beers = ({beers, setBeers, user}) => {
         {/* VIEW OF BEERS SHOWN */}
        
         <StyledBeers>
+            
             {onPage.filter(b => b.flavour.startsWith(select)).map(beer => 
             
             <div key={beer.id}> 
@@ -77,7 +76,7 @@ const Beers = ({beers, setBeers, user}) => {
     </StyledMain>
         </>
     )
- 
+   
 }
 
 export default Beers
